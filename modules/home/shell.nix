@@ -126,7 +126,16 @@ in {
 
       starship init fish | source
 
-      nvm use default
+      # Check if NVM has a default version, if not install LTS
+      if test -e ~/.nvm/alias/default
+        nvm use default >/dev/null 2>&1
+      else
+        echo "No default Node.js version found. Installing LTS version..."
+        bass source /opt/homebrew/opt/nvm/nvm.sh --no-use
+        nvm install --lts
+        nvm alias default lts/*
+        nvm use default
+      end
 
       # Disable fish greeting
       set -g fish_greeting ""
