@@ -28,6 +28,10 @@
       '';
   };
 
+  # Fix for Nix build user group ID mismatch
+  # This is needed when the nixbld group has GID 350 instead of the expected 30000
+  ids.gids.nixbld = 350;
+
   # Used for backwards compatibility, please read the changelog before changing.
   system.stateVersion = 4;
 }

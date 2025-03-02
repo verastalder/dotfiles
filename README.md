@@ -84,6 +84,7 @@ darwin-rebuild switch --flake ~/.config/nixpkgs#verastalder
 - Removed deprecated `services.nix-daemon.enable` option
 - Removed deprecated `nix.useDaemon` option
 - Using pure builds by ensuring the Git repository is clean before building
+- Fixed Nix build user group ID mismatch (set to 350 from the default 30000)
 
 ## Goals
 
