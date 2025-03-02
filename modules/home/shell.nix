@@ -47,6 +47,7 @@
     gfm = "git findmessage";
     p = "pnpm";
     y = "yarn";
+    reload-switch = "darwin-rebuild switch --flake ~/.config/nixpkgs#verastalder";
   };
 in {
   home.packages = with pkgs; [
