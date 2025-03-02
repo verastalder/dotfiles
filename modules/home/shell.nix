@@ -131,10 +131,8 @@ in {
         nvm use default >/dev/null 2>&1
       else
         echo "No default Node.js version found. Installing LTS version..."
-        bass source /opt/homebrew/opt/nvm/nvm.sh --no-use
-        nvm install --lts
-        nvm alias default lts/*
-        nvm use default
+        # Source NVM and run multiple commands within the same bass call
+        bass "source /opt/homebrew/opt/nvm/nvm.sh --no-use && nvm install --lts && nvm alias default 'lts/*' && nvm use default"
       end
 
       # Disable fish greeting
