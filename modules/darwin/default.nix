@@ -13,8 +13,10 @@
   nix = {
     settings = {
       experimental-features = "nix-command flakes";
-      auto-optimise-store = true;
     };
+
+    # Enable automatic store optimization
+    optimise.automatic = true;
 
     # Add ability to install packages for both Intel and ARM macs if needed
     extraOptions =
@@ -25,9 +27,6 @@
         extra-platforms = x86_64-darwin aarch64-darwin
       '';
   };
-
-  # Enable nix-darwin services
-  services.nix-daemon.enable = true;
 
   # Used for backwards compatibility, please read the changelog before changing.
   system.stateVersion = 4;

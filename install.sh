@@ -46,6 +46,13 @@ echo "⚙️ Configuring Nix..."
 mkdir -p ~/.config/nix
 echo "experimental-features = nix-command flakes" > ~/.config/nix/nix.conf
 
+# Ensure the git repo is clean before proceeding
+if [ -n "$(git status --porcelain)" ]; then
+  echo "⚠️ Git repository has uncommitted changes. Committing them now..."
+  git add .
+  git commit -m "Initial configuration setup"
+fi
+
 # Install nix-darwin
 echo "🍎 Installing nix-darwin..."
 if ! command -v darwin-rebuild &> /dev/null; then

@@ -15,9 +15,6 @@
     alejandra
   ];
 
-  # Enable the nix daemon
-  nix.useDaemon = true;
-
   # Set the default configuration path
   environment.darwinConfig = "$HOME/.config/nixpkgs/flake.nix";
 }

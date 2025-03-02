@@ -40,6 +40,10 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/verastalder/dotfiles/mai
 4. Build and activate the configuration:
    ```bash
    cd ~/.config/nixpkgs
+   # Commit any local changes first to keep the repository clean
+   git add .
+   git commit -m "Initial configuration"
+   # Then build the configuration
    nix run github:lnl7/nix-darwin -- switch --flake .#verastalder
    ```
 
@@ -48,6 +52,10 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/verastalder/dotfiles/mai
 To update your system after making changes to the configuration:
 
 ```bash
+# Always commit your changes first
+git add .
+git commit -m "Update configuration"
+# Then rebuild
 darwin-rebuild switch --flake ~/.config/nixpkgs#verastalder
 ```
 
@@ -68,6 +76,14 @@ darwin-rebuild switch --flake ~/.config/nixpkgs#verastalder
 │       └── shell.nix      # Shell configuration
 └── install.sh             # Installation script
 ```
+
+## Recent Fixes
+
+- Fixed deprecated nix-darwin configuration options
+- Replaced `nix.settings.auto-optimise-store` with `nix.optimise.automatic`
+- Removed deprecated `services.nix-daemon.enable` option
+- Removed deprecated `nix.useDaemon` option
+- Using pure builds by ensuring the Git repository is clean before building
 
 ## Goals
 
