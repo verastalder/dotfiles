@@ -7,7 +7,7 @@ My fully-declarative system configuration using Nix and Nix-Darwin.
 Run at your own risk:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/jonasschultheiss/dotfiles/main/install | bash
+curl -fsSL https://raw.githubusercontent.com/verastalder/dotfiles/main/install | bash
 ```
 
 ## Goals

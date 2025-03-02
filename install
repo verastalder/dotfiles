@@ -35,7 +35,7 @@ install_nix() {
 
     # Update local shell
     source /etc/bashrc
-    source /Users/jonasschultheiss/.nix-profile/etc/profile.d/nix.sh
+    source /Users/verastalder/.nix-profile/etc/profile.d/nix.sh
   }
 }
 
@@ -70,7 +70,7 @@ install_homebrew() {
 }
 
 clone_repository() {
-  repository="https://github.com/jonasschultheiss/dotfiles.git"
+  repository="https://github.com/verastalder/dotfiles.git"
   clone_target="${HOME}/.config/nixpkgs"
   if [ $( cat "${clone_target}/.git/config" | grep "${repository}" ) ]; then
     cd "${clone_target}"

@@ -7,12 +7,11 @@
 
   programs.git = {
     enable = true;
-    userName = "Jonas Schultheiss";
-    userEmail = "complaint@jonasschultheiss.dev";
+    userName = "verastalder";
     package = pkgs.gitAndTools.gitFull;
 
     signing = {
-      key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIEkKRKYGIagUWR53s7ZH5lrn7O1ALWqbjALwrIm13Rv";
+      key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIIAa+UTL6oKU6LYkj4WfTrQafma8ID6sWT9pWtTyrVP";
 
       signByDefault = true;
     };

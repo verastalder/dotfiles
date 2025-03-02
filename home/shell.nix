@@ -120,7 +120,7 @@ in {
 
 
       # Configure PNPM
-      set -gx PNPM_HOME "/Users/jonasschultheiss/Library/pnpm"
+      set -gx PNPM_HOME "/Users/verastalder/Library/pnpm"
       set -gx PATH "$PNPM_HOME" $PATH
 
       starship init fish | source

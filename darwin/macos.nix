@@ -66,7 +66,7 @@
     };
 
     screencapture = {
-      location = "/Users/jonasschultheiss/screenshots";
+      location = "/Users/verastalder/screenshots";
     };
 
     smb = {

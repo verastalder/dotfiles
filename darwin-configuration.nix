@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  mainUser = "jonasschultheiss";
+  mainUser = "verastalder";
 in {
   imports = [./darwin <home-manager/nix-darwin>];
 
