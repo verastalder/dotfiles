@@ -15,7 +15,6 @@
       "bottom"
       "broot"
       "cpanm"
-      "dog"
       "duf"
       "dust"
       "eslint"
@@ -86,9 +85,6 @@
       "visual-studio-code"
       "font-geist-mono"
       "font-geist"
-    ];
-    taps = [
-      "homebrew/cask-fonts"
     ];
     masApps = {
       "Microsoft Excel" = 462058435;
