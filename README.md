@@ -40,7 +40,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/verastalder/dotfiles/mai
 4. Build and activate the configuration:
    ```bash
    cd ~/.config/nixpkgs
-   nix run nixpkgs/nixpkgs-unstable#nix-darwin -- switch --flake .#verastalder
+   nix run github:lnl7/nix-darwin -- switch --flake .#verastalder
    ```
 
 ## Updating

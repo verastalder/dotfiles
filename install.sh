@@ -49,7 +49,7 @@ echo "experimental-features = nix-command flakes" > ~/.config/nix/nix.conf
 # Install nix-darwin
 echo "🍎 Installing nix-darwin..."
 if ! command -v darwin-rebuild &> /dev/null; then
-  nix run nixpkgs/nixpkgs-unstable#nix-darwin \
+  nix run github:lnl7/nix-darwin \
     -- switch --flake "$TARGET_DIR#$USER"
 else
   echo "✅ nix-darwin is already installed."
@@ -58,7 +58,7 @@ fi
 # Build and activate the configuration
 echo "🔨 Building and activating the configuration..."
 cd "$TARGET_DIR"
-nix run nixpkgs/nixpkgs-unstable#nix-darwin \
+nix run github:lnl7/nix-darwin \
   -- switch --flake .#$USER
 
 echo "✨ Setup complete! Your system is now configured with Nix flakes."
