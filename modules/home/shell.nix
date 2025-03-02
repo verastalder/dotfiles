@@ -24,7 +24,7 @@
     pwdc = "pwd | pbcopy";
     flushdns = "sudo killall -HUP mDNSResponder";
     dotfiles = "cursor ~/.config/nixpkgs";
-    reload-switch = "darwin-rebuild switch --flake ~/.config/nixpkgs#verastalder"
+    reload-switch = "darwin-rebuild switch --flake ~/.config/nixpkgs#verastalder";
     dark = "osascript -e 'tell application \"System Events\" to tell appearance preferences to set dark mode to not dark mode'";
   };
 
