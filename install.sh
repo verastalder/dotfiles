@@ -30,6 +30,12 @@ else
   cd "$TARGET_DIR"
 fi
 
+# Install Rosetta 2 for Apple Silicon Macs
+if [[ $(uname -m) == "arm64" ]]; then
+  echo "🍎 Installing Rosetta 2 for Apple Silicon..."
+  /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+fi
+
 # Check if Nix is installed
 if ! command -v nix-env &> /dev/null; then
   echo "📦 Installing Nix..."
@@ -38,6 +44,19 @@ if ! command -v nix-env &> /dev/null; then
   # Source nix profile
   if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
     . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+  fi
+fi
+
+# Check if Homebrew is installed
+if ! command -v brew &> /dev/null; then
+  echo "🍺 Installing Homebrew..."
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  
+  # Add Homebrew to PATH for this session
+  if [[ $(uname -m) == "arm64" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  else
+    eval "$(/usr/local/bin/brew shellenv)"
   fi
 fi
 
